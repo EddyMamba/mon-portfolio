@@ -69,9 +69,9 @@ function About() {
                 {/* MODIFICATION ICI : Lien direct vers ton PDF public */}
                 <a
                   className="about-link"
-                  href="/CV_Eddy_Mamba.pdf"
+                  href="CV_Eddy_Mamba.pdf" 
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer" 
                   download="CV_Eddy_Mamba.pdf"
                 >
                   Mon CV
