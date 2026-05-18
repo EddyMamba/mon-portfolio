@@ -26,9 +26,11 @@ function About() {
   );
 
   const techItems = [
-    { short: "R", label: "React", color: "#149eca" },
-    { short: "TS", label: "TypeScript", color: "#3178c6" }, // Doublon supprimé ici
+   { short: "H5", label: "HTML5", color: "#e34c26" },
+    { short: "C3", label: "CSS3", color: "#264de4" },
     { short: "JS", label: "JavaScript", color: "#f7df1e" },
+    { short: "TS", label: "TypeScript", color: "#3178c6" },
+    { short: "R", label: "React", color: "#149eca" },
     { short: "TW", label: "TailwindCSS", color: "#38bdf8" },
     { short: "V", label: "Vite", color: "#a855f7" },
     { short: "N", label: "Node.js", color: "#3c873a" },
@@ -39,6 +41,7 @@ function About() {
     { short: "GH", label: "GitHub", color: "#0f172a" },
     { short: "F", label: "Figma", color: "#a21caf" },
     { short: "Cl", label: "Cloudinary", color: "#3448C5" },
+    { short: "Nl", label: "Netlify", color: "#00AD9F" },
     { short: "Rw", label: "Railway", color: "#131415" },
     { short: "Rn", label: "Render", color: "#D64278" },
     { short: "Ej", label: "EmailJS", color: "#F3A323" }
@@ -62,11 +65,14 @@ function About() {
                 >
                   GitHub
                 </a>
+                
+                {/* MODIFICATION ICI : Lien direct vers ton PDF public */}
                 <a
                   className="about-link"
-                  href="https://www.linkedin.com/in/eddymamba"
+                  href="/CV_Eddy_Mamba.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="CV_Eddy_Mamba.pdf"
                 >
                   Mon CV
                 </a>
