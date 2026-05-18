@@ -1,0 +1,1210 @@
+/* ==========================================================================
+   1. CONFIGURATION GLOBALE & RESETS
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar,
+.hero,
+.about,
+.projects,
+.contact {
+  scroll-margin-top: 90px;
+}
+
+/* ==========================================================================
+   2. BARRE DE NAVIGATION (NAVBAR)
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 0;
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(16px);
+  color: white;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.navbar-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+  padding: 6px 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: #38bdf8;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #38bdf8;
+  color: #020617;
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.nav-links a:focus-visible,
+.btn:focus-visible,
+.btn-outline:focus-visible,
+.menu-icon:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  padding: 10px;
+  line-height: 0;
+}
+
+.menu-icon span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* Animations d'ouverture du menu mobile */
+.menu-icon.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+/* ==========================================================================
+   3. SECTION HERO
+   ========================================================================== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(1200px 500px at 50% -100px, rgba(56, 189, 248, 0.28), transparent 60%),
+              #0f172a;
+  color: white;
+  padding: 30px 20px;
+}
+
+.hero-content {
+  max-width: 760px;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  color: #94a3b8;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 0;
+  line-height: 1.02;
+}
+
+.hero-content h2 {
+  color: #38bdf8;
+  margin: 20px auto 0;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  max-width: 680px;
+}
+
+.hero-content p {
+  max-width: 660px;
+  margin: 24px auto 0;
+  color: rgba(226, 232, 240, 0.92);
+  line-height: 1.8;
+}
+
+.hero-buttons, 
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.btn {
+  background: #38bdf8;
+  padding: 10px 20px;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline {
+  border: 1px solid #38bdf8;
+  padding: 10px 20px;
+  color: #38bdf8;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: transform 0.15s ease, background 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover,
+.btn-outline:hover {
+  transform: translateY(-1px);
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.btn-outline:hover {
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.buttons a {
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  background: #38bdf8;
+  color: black;
+}
+
+.buttons a:last-child {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+/* ==========================================================================
+   4. SECTION À PROPOS (ABOUT)
+   ========================================================================== */
+.about {
+  padding: 80px 20px;
+  text-align: left;
+  background: radial-gradient(900px 420px at 50% 0%, rgba(56, 189, 248, 0.10), transparent 60%),
+              #0f172a;
+  color: white;
+}
+
+.about-card {
+  margin: 28px auto 0;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+  padding: 5px 0;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.about-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 10px;
+  padding-bottom: 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  text-align: center;
+}
+
+.about-titleRow {
+  display: inline-flex;
+  text-align: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.about-header h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  align-items: center;
+}
+
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.10);
+  color: rgba(226, 232, 240, 0.95);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.about-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.95);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.16);
+  text-align: right;
+}
+
+.about-subtitle {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.72);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.about-meta {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-dot {
+  color: rgba(226, 232, 240, 0.45);
+}
+
+.about-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.about-body {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+  justify-content: center; /* Aligne horizontalement le bloc au centre de l'écran */
+  max-width: 1050px;       /* Empêche la grille de s'étaler sur les 1200px de la carte */
+  margin: 0 auto;          /* Centre le bloc complet horizontalement */
+  padding:  20px 0 20px;
+}
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(30, 41, 59, 0.72);
+  min-height: 220px;
+}
+
+.about-sidebar h3 {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  color: rgba(226, 232, 240, 0.96);
+  text-align: center;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.about-link:hover {
+  background: rgba(56, 189, 248, 0.18);
+  transform: translateY(-1px);
+}
+
+.about-sidebar p {
+  margin: 0;
+  line-height: 1.8;
+  color: rgba(226, 232, 240, 0.84);
+}
+
+.about-copy {
+  display: grid;
+  gap: 20px;
+  justify-items: center; /* Calibrage au milieu */
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  color: rgba(226, 232, 240, 0.98);
+  max-width: 680px;
+  margin: 0;
+  text-align: justify;
+}
+
+.about p {
+  width: 100%;
+  max-width: 680px;
+  margin: 0;
+  line-height: 1.75;
+  color: rgba(226, 232, 240, 0.88);
+  text-align: justify;
+}
+
+/* ==========================================================================
+   5. COMPOSANTS DE LA STACK TECHNIQUE
+   ========================================================================== */
+.tech-section {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.tech-section h3 {
+  margin: 30px 0 24px;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: rgba(226, 232, 240, 0.95);
+  text-align: center;
+}
+
+.tech-group__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tech-group {
+  background: rgba(30, 41, 59, 0.58);
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.tech-group:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.22);
+  background: rgba(30, 41, 59, 0.7);
+}
+
+.tech-group__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.tech-group__header h4 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  color: rgba(226, 232, 240, 0.95);
+}
+
+.tech-group__subtitle {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: rgba(148, 163, 184, 0.95);
+  line-height: 1.4;
+}
+
+.stack-icon {
+  width: 18px;
+  height: 18px;
+  color: rgba(56, 189, 248, 0.9);
+  flex: none;
+}
+
+.chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.10);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  color: rgba(226, 232, 240, 0.92);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.chip-logo {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  display: block;
+}
+
+.chip:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   6. SECTION PROJETS
+   ========================================================================== */
+
+.projects {
+  padding: 80px 20px;
+  background: #020617;
+  color: white;
+  text-align: center;
+}
+
+/* La grande carte conteneur noir translucide */
+.projects-card {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 40px; /* Augmenté pour donner de l'air au titre et à la grille */
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+}
+
+.section-header {
+  max-width: 100%;
+  margin: 0 auto 40px; /* Espace sous la description générale */
+}
+
+.section-tag {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-description {
+  color: #94a3b8;
+  line-height: 1.85;
+  max-width: 600px;
+  margin: 16px auto 0;
+}
+
+/* La grille globale des cartes */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px; /* Plus d'espace entre les deux blocs de projets */
+  margin: 0 auto;
+  max-width: 1000px; /* Limite la largeur globale pour éviter que les cartes soient géantes */
+  justify-content: center;
+}
+
+/* La carte individuelle d'un projet */
+.project-card {
+  background: #111827;
+  padding: 20px; /* Augmenté de 10px à 20px pour aligner parfaitement le texte et l'image */
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+  transition: transform 0.32s ease, border-color 0.32s ease;
+  display: flex;
+  flex-direction: column; /* Utilisation de flex pour un meilleur contrôle vertical */
+  gap: 20px;
+  text-align: left;
+  max-width: 460px; /* Taille parfaite sur Desktop */
+  margin: 0 auto;   /* Centre les cartes dans leur colonne */
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+/* Le bloc image */
+.project-card__visual img {
+  width: 100%;
+  height: 230px; /* Hauteur fixe pour éviter l'effet géant sur grand écran */
+  object-fit: cover; /* Coupe proprement l'image sans la déformer */
+  object-position: top; /* Montre le haut de ta maquette (la navbar) */
+  border-radius: 16px;
+}
+
+/* Le bloc d'infos textuelles */
+.project-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1; /* Pousse les boutons vers le bas si un texte est plus court */
+}
+
+.project-card__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.project-card h3 {
+  color: #cffafe;
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.project-card p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto; /* Aligne les badges en bas avant les actions */
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.project-card__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.project-card__actions a {
+  flex: 1; /* Les deux boutons prendront exactement la même largeur */
+  text-align: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.project-card__actions a:last-child {
+  background: transparent;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+}
+
+.project-card__actions a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* ==========================================================================
+   7. SECTION CONTACT
+   ========================================================================== */
+.contact h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 48px 42px;
+  border-radius: 24px;
+  background: rgba(2, 6, 23, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.20);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(14px);
+}
+
+.contact-card-header {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.contact-card-header h2 {
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.contact-intro {
+  color: #cbd5e1;
+  line-height: 1.85;
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.contact-form {
+  display: grid;
+  gap: 24px;
+  margin-top: 26px;
+  font-size: 1.08rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-row {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-field {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-field span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-align: left;
+}
+
+.contact-field input,
+.contact-field textarea {
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(226, 232, 240, 0.98);
+  min-height: 32px;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: rgba(203, 213, 225, 0.7);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: rgba(56, 189, 248, 0.95);
+  box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.1);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.contact-field--full {
+  grid-column: 1 / -1;
+}
+
+.contact-field textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  padding: 18px 24px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  color: #020617;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  width: 100%;
+  max-width: 900px;
+  justify-self: start;
+}
+
+.contact-form button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.contact-success {
+  margin: 0;
+  font-weight: 600;
+  color: #86efac;
+}
+
+/* ==========================================================================
+   8. KEYFRAMES ANIMATIONS
+   ========================================================================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   9. MEDIA QUERIES (RESPONSIVE) - DU PLUS GRAND AU PLUS PETIT
+   ========================================================================== */
+
+/* Écrans larges / Tablettes Horizontales (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .about-body {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+}
+
+/* Moyens écrans (min-width: 940px) */
+@media (min-width: 940px) {
+  .about-body {
+    grid-template-columns: 320px minmax(0, 1fr);
+  }
+}
+
+/* Petits écrans / Tablettes Verticales (max-width: 940px) */
+@media (max-width: 940px) {
+  .about-sidebar {
+    text-align: center;
+  }
+
+  .about-copy {
+    text-align: left;
+    justify-items: start;
+  }
+
+  .about-sidebar h3 {
+    text-align: center;
+  }
+
+  .about-copy p,
+  .about-copy .about-lead {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+/* Mode responsive Standard (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 0;
+  }
+
+  .navbar-inner {
+    gap: 16px;
+  }
+
+  .menu-icon {
+    display: inline-flex;
+  }
+@media (max-width: 768px) {
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 290px;
+    height: 100vh;
+    
+    /* --- DESIGN MODERNE : Translucide et Flou --- */
+    background: rgba(2, 6, 23, 0.75); /* Fond sombre transparent */
+    backdrop-filter: blur(20px);      /* Effet de verre dépoli haut de gamme */
+    -webkit-backdrop-filter: blur(20px);
+    
+    /* --- STRUCTURATION --- */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre le menu verticalement pour une meilleure ergonomie */
+    gap: 40px;
+    padding: 40px;
+    
+    /* --- BORDURE ET PROFILE --- */
+    border-right: 1px solid rgba(148, 163, 184, 0.12); /* Ligne de séparation très fine */
+    box-shadow: 20px 0 50px rgba(0, 0, 0, 0.3);       /* Ombre douce vers la droite */
+    
+    /* --- COMPORTEMENT DE L'ANIMATION --- */
+    transform: translateX(-100%);
+    opacity: 0; /* Rendu invisible quand il est fermé */
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease; /* Transition ultra fluide */
+    z-index: 999;
+  }
+
+  /* Quand le menu est ouvert */
+  .nav-menu.active {
+    transform: translateX(0);
+    opacity: 1; /* Devient visible */
+    pointer-events: auto;
+  }
+
+  /* Conteneur des liens */
+  .nav-links {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center; /* <-- Remplace flex-start par center */
+  }
+
+  /* Liens individuels */
+  .nav-links a {
+    padding: 10px 0;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center; /* <-- Assure-toi que c'est bien au centre */
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  /* Effet au survol / clic sur mobile */
+  .nav-links a:hover,
+  .nav-links a:active {
+    color: #38bdf8;
+    transform: scale(1.05); /* Effet de zoom subtil et moderne */
+  }
+  /* Bouton d'action (ex: "Me contacter") dans le menu mobile */
+  .nav-cta {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 12px; /* Coins un peu plus adoucis pour matcher avec les cartes projets */
+    margin-top: 20px;
+  }
+}
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about, 
+  .projects, 
+  .contact {
+    padding: 40px 15px;
+  }
+
+  .about h2, 
+  .about h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-buttons, 
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons a {
+    padding: 5px 5px;
+  }
+
+  .contact-card {
+    max-width: 100%;
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .contact-card-header {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  .contact-form {
+    gap: 16px;
+    margin-top: 16px;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .contact-row {
+    gap: 14px;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-field input,
+  .contact-field textarea {
+    padding: 14px 16px;
+    min-height: 52px;
+    font-size: 16px;
+  }
+
+  .contact-field textarea {
+    min-height: 200px;
+  }
+
+  .contact-form button {
+    padding: 16px 18px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 14px;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0 0px;
+  }
+
+  .project-card__visual img {
+    height: auto;       
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+  }
+  .project-card__actions {
+    flex-direction: column; /* Aligne les boutons à la verticale */
+    gap: 12px;              /* Crée un espace propre entre le premier et le deuxième bouton */
+  }
+
+  .project-card__actions a {
+    width: 100%;            /* Force chaque bouton à prendre toute la largeur de la carte */
+    text-align: center;
+  }
+
+  .tech-badges {
+    flex-wrap: nowrap;       /* Empêche les badges de revenir à la ligne */
+    overflow-x: auto;        /* Active le défilement horizontal si ça dépasse */
+    white-space: nowrap;     /* Force tout à rester sur une seule ligne */
+    padding-bottom: 8px;     /* Petit espace pour ne pas coller aux boutons */
+    width: 100%;
+    
+    /* Cache la barre de défilement pour un rendu ultra propre sur Chrome/Safari/Firefox */
+    scrollbar-width: none;   
+  }
+  
+  .tech-badges::-webkit-scrollbar {
+    display: none;           
+  }
+
+  .tech-badge {
+    flex-shrink: 0;          /* Empêche le badge de se déformer ou de s'écraser */
+  }
+
+  .projects-card {
+    padding: 30px 16px; /* 30px en haut/bas, et seulement 16px sur les côtés au lieu de 40px/50px */
+    border-radius: 16px; /* Légèrement plus arrondi pour fitter le mobile */
+  }
+  .contact-card {
+    max-width: 100%;
+    padding: 32px 16px; /* 32px en haut/bas, et seulement 16px sur les côtés */
+    border-radius: 18px;
+  }
+
+  .contact-card-header {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  /* Donne de l'air au texte d'introduction */
+  .contact-intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 100%;
+    padding: 0 4px;
+  }
+
+  /* Ajustement mineur pour les labels des formulaires (Nom, Email...) */
+  .contact-field span {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+
+  .hero {
+    min-height: 85vh; /* Donne un peu plus de hauteur pour éviter d'étouffer le contenu */
+    padding: 60px 16px 40px; /* Moins de padding sur les côtés (16px) pour laisser le texte s'étaler */
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Force les boutons à s'empiler proprement si l'écran est minuscule */
+    width: 100%;
+    max-width: 320px; /* Aligne la largeur des boutons sur celle de tes cartes projets */
+    margin: 32px auto 0;
+  }
+
+  .hero-buttons .btn,
+  .hero-buttons .btn-outline {
+    width: 100%; /* Les deux boutons feront exactement la même taille, super propre ! */
+  }
+
+  .about-copy {
+    width: 100%;
+    display: block; /* Force le bloc à se comporter de manière stricte */
+    margin-bottom: 20px; /* Crée un espace propre avant le titre de la stack */
+  }
+
+  .about-copy p {
+    text-align: left; /* Comme vu précédemment, évite le 'justify' sur petit mobile pour ne pas étirer les mots */
+    width: 100%;
+  }
+}
+
+/* Grille de technologies en colonnes (min-width: 720px) */
+@media (min-width: 720px) {
+  .tech-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Grille de contact sur Desktop (min-width: 860px) */
+@media (min-width: 860px) {
+  .contact-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tout petits téléphones mobiles (max-width: 560px) */
+@media (max-width: 560px) {
+  .about-card {
+    padding: 20px;
+  }
+  .about-header {
+    grid-template-columns: 1fr;
+  }
+  .about-titleRow {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
