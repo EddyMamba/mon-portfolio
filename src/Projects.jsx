@@ -14,8 +14,8 @@ function Projects() {
         "Portfolio personnel développé avec React et EmailJS pour présenter mes projets et permettre un contact direct.",
       techs: ["React", "JavaScript", "CSS", "EmailJS"],
       image: "porftolio1.png",
-      github: "https://github.com/ton-username/portfolio",
-      live: "https://ton-site-live.com",
+      github: "https://github.com/EddyMamba/mon-portfolio",
+      live: "https://EddyMamba.github.io/mon-portfolio/",
     },
   ];
 
