@@ -4,7 +4,6 @@ const navItems = [
   { href: "#home", label: "Accueil" },
   { href: "#about", label: "À propos" },
   { href: "#projects", label: "Projets" },
-  // On laisse Contact ici, il servira automatiquement pour le bouton isolé
   { href: "#contact", label: "Me contacter" } 
 ];
 
