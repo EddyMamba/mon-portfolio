@@ -67,15 +67,14 @@ function About() {
                 </a>
                 
                 {/* Lien direct vers  PDF public */}
-                <a
-                  className="about-link"
-                  href="public/CV_2026-05-27_Eddy_Mamba.pdf" 
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  
-                >
-                  Mon CV
-                </a>
+               <a
+  className="about-link"
+  href="CV_2026-05-27_Eddy_Mamba.pdf" 
+  target="_blank"
+  rel="noopener noreferrer" 
+>
+  Mon CV
+</a>
               </div>
             </aside>
 
