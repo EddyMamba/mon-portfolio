@@ -66,13 +66,13 @@ function About() {
                   GitHub
                 </a>
                 
-                {/* MODIFICATION ICI : Lien direct vers ton PDF public */}
+                {/* Lien direct vers  PDF public */}
                 <a
                   className="about-link"
-                  href="CV_Eddy_Mamba.pdf" 
+                  href="public/CV_2026-05-27_Eddy_Mamba.pdf" 
                   target="_blank"
                   rel="noopener noreferrer" 
-                  download="CV_Eddy_Mamba.pdf"
+                  
                 >
                   Mon CV
                 </a>
@@ -80,24 +80,21 @@ function About() {
             </aside>
 
             <div className="about-copy">
-              <p className="about-lead">
-                Développeur web passionné, je conçois des applications modernes,
-                intuitives et performantes avec React et Node.js.
-              </p>
-              <p>
-                J’ai terminé ma formation en développement web et j’ai travaillé
-                sur plusieurs projets concrets, dont un clone de X (Twitter),
-                qui m’a permis de renforcer mes compétences en frontend et backend.
-              </p>
-              <p>
-                J’aime transformer des idées en produits web fonctionnels,
-                avec une attention particulière portée à l’expérience utilisateur,
-                la performance et la qualité du code.
-              </p>
-            </div>
+  <p className="about-lead">
+    Développeur web full stack passionné par la création d'applications modernes, performantes et centrées sur l'utilisateur.
+  </p>
+
+  <p>
+    Formé au développement web à Kadea Academy après un parcours en informatique à Leadership Academia University, je développe des applications avec React et NodeJs
+  </p>
+
+  <p>
+    À travers plusieurs projets concrets, notamment un clone de X (Twitter), j'ai renforcé mes compétences en frontend, backend et en conception d'interfaces modernes.
+  </p>
+</div>
           </div>
 
-          {/* ZONE 2 : La Stack Technique (Bien centrée en dessous) */}
+          {/* ZONE 2 : La Stack Technique  */}
           <div className="tech-section">
             <h3>Ma Stack Technique</h3>
             <div className="tech-group__chips" aria-label="Stack technique">
