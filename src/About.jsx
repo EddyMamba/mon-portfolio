@@ -26,7 +26,7 @@ function About() {
   );
 
   const techItems = [
-   { short: "H5", label: "HTML5", color: "#e34c26" },
+    { short: "H5", label: "HTML5", color: "#e34c26" },
     { short: "C3", label: "CSS3", color: "#264de4" },
     { short: "JS", label: "JavaScript", color: "#f7df1e" },
     { short: "TS", label: "TypeScript", color: "#3178c6" },
@@ -65,35 +65,45 @@ function About() {
                 >
                   GitHub
                 </a>
+
+                {/* Lien LinkedIn ajouté */}
+                <a
+                  className="about-link"
+                  href="https://www.linkedin.com/in/eddy-mamba" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
                 
-                {/* Lien direct vers  PDF public */}
-               <a
-  className="about-link"
-  href="CV_2026-05-27_Eddy_Mamba.pdf" 
-  target="_blank"
-  rel="noopener noreferrer" 
->
-  Mon CV
-</a>
+                {/* Lien direct vers PDF public */}
+                <a
+                  className="about-link"
+                  href="CV__Eddy_Mamba.pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                >
+                  Mon CV
+                </a>
               </div>
             </aside>
 
             <div className="about-copy">
-  <p className="about-lead">
-    Développeur web full stack passionné par la création d'applications modernes, performantes et centrées sur l'utilisateur.
-  </p>
+              <p className="about-lead">
+                Développeur web passionné, je conçois des applications modernes, performantes et centrées sur l'utilisateur. Diplômé de la Kadea Academy, j'ai développé une solide expertise en React, Tailwind CSS, AdonisJS et PostgreSQL à travers des projets concrets, dont un clone complet de X (Twitter).
+              </p>
 
-  <p>
-    Formé au développement web à Kadea Academy après un parcours en informatique à Leadership Academia University, je développe des applications avec React et NodeJs
-  </p>
+              <p className="about-text">
+                Passionné par l'UI/UX Design, je crée des interfaces intuitives, accessibles et esthétiques, en mettant l'accent sur une expérience utilisateur fluide et efficace.
+              </p>
 
-  <p>
-    À travers plusieurs projets concrets, notamment un clone de X (Twitter), j'ai renforcé mes compétences en frontend, backend et en conception d'interfaces modernes.
-  </p>
-</div>
+              <p className="about-text">
+                Curieux, autonome et rigoureux, je cherche constamment à perfectionner mes compétences et à contribuer à des projets innovants à fort impact.
+              </p>
+            </div>
           </div>
 
-          {/* ZONE 2 : La Stack Technique  */}
+          {/* ZONE 2 : La Stack Technique */}
           <div className="tech-section">
             <h3>Ma Stack Technique</h3>
             <div className="tech-group__chips" aria-label="Stack technique">
