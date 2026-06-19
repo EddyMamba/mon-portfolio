@@ -66,10 +66,10 @@ function About() {
                   GitHub
                 </a>
 
-                {/* Lien LinkedIn ajouté */}
+                {/* Lien LinkedIn  */}
                 <a
                   className="about-link"
-                  href="https://www.linkedin.com/in/eddy-mamba" 
+                  href="https://www.linkedin.com/in/eddy-mamba-171223351/" 
                   target="_blank"
                   rel="noopener noreferrer"
                 >
